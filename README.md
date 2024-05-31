@@ -47,3 +47,46 @@ npm install
 ```bash
 npm start
 ```
+
+## Example Queries
+### Get All Pizzas
+```graphql
+query GetPizzas {
+  pizzas {
+    id
+    pizza
+    toppings {
+      id
+      topping
+    }
+    stock
+    status
+  }
+}
+```
+### Get Pizza by Name
+```graphql
+query GetPizzaByName($name: String!) {
+  pizzas(name: $name) {
+    id
+    pizza
+    toppings {
+      id
+      topping
+    }
+    stock
+    status
+  }
+}
+
+```
+
+## Project Structure
+- Server: Contains the GraphQL server setup with Apollo Server.
+- Client: Contains the React application with Apollo Client for querying the server.
+
+## Contributing
+Feel free to submit issues and pull requests for new features and improvements.
+
+## License
+This project is licensed under the MIT License.
